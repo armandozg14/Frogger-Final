@@ -78,8 +78,6 @@ class Modelo:
             c_void_p(4 * self.vertices.itemsize))
         gl.glEnableVertexAttribArray(color_id)
 
-
-
         gl.glBindBuffer(gl.GL_ARRAY_BUFFER, 0)
         gl.glBindVertexArray(0)
 

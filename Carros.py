@@ -93,13 +93,8 @@ class Carros(Modelo):
             ], dtype="float32"
         ))
 
-
         #crear una matriz identidad
         self.transformaciones = glm.mat4(1.0)
-        #self.transformaciones = glm.translate(self.transformaciones,
-        #            glm.vec3(0.5,-0.2,0.0))
-        #self.transformaciones = glm.rotate(self.transformaciones,
-        #            45.0, glm.vec3(0.0,0.0,1.0))
         super().__init__(shader, posicion_id, color_id, transformaciones_id, posicion_x, posicion_y, posicion_z, velocidad, direccion)
 
     def actualizar(self, tiempo_delta):
@@ -132,20 +127,6 @@ class Carros(Modelo):
         gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 36, 4)
         gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 40, 4)
         gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 44, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 48, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 52, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 56, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 60, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 64, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 68, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 72, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 76, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 80, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 84, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 88, 4)
-        #gl.glDrawArrays(gl.GL_TRIANGLE_STRIP, 92, 4)
-
-
 
         gl.glBindVertexArray(0)
         self.shader.liberar_programa()
